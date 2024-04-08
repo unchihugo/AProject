@@ -1,0 +1,17 @@
+/* For the table-striped rows */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(247, 0, 5) !important;
+    color: red !important;
+}
+
+.table {
+    border-spacing:0 20px;
+}
+
+.user-row {
+    font-weight: bold;
+}
+
+body {
+    min-height: 100vh !important;
+}
