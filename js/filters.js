@@ -1,4 +1,8 @@
 function filterPhase(phase) {
+    input = document.getElementById("searchBox");
+    input.value = '';
+    dateBox = document.getElementById('dateBox');
+    dateBox.value = '';
     var table, tr, i;
     table = document.getElementById("projectTable");
     tr = table.getElementsByTagName("tr");
@@ -13,6 +17,9 @@ function filterPhase(phase) {
 }
 
 function searchTable() {
+    dateBox = document.getElementById('dateBox');
+    dateBox.value = '';
+    document.getElementById('btnradio1').checked = true;
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("searchBox");
     filter = input.value.toUpperCase();
@@ -29,25 +36,24 @@ function searchTable() {
             }
         }
     }
-    const dateBox = document.getElementById('dateBox');
-    dateBox.value = '';
 }
 
 function filterDate() {
-    const dateBox = document.getElementById('dateBox');
+    input = document.getElementById("searchBox");
+    input.value = '';
+    document.getElementById('btnradio1').checked = true;
+    dateBox = document.getElementById('dateBox');
     if (dateBox.value == '') {
         const table = document.getElementById('projectTable');
         const tableRows = table.getElementsByTagName('tr');
         for (let i = 1; i < tableRows.length; i++) {
             tableRows[i].style.display = '';
         }
-        input = document.getElementById("searchBox");
-        input.value = '';
         return;
     }
     var date = new Date(dateBox.value);
     const day = date.getDate().toString().padStart(2, '0');
-    const month = (date.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-based, so we add 1
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
     const year = date.getFullYear();
 
     const startDate = `${day}/${month}/${year}`;
