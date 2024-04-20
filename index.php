@@ -1,5 +1,3 @@
-<!-- In my php website, how can I add phase filters using bootstrap button groups and have sorting functions? This is my code: -->
-
 <head>
 	<title>Aston Projects</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -87,7 +85,7 @@
 					<div class="input-group input-group-sm flex-fill me-lg-3 mb-2 mb-sm-0">
 						<div class="input-group-text" id="btnGroupAddon">Title</div>
 						<input type="text" class="form-control" id="searchBox" onkeyup="searchTable()"
-							placeholder="Search titles, overrides filters" aria-describedby="btnGroupAddon">
+							placeholder="Search project titles" aria-describedby="btnGroupAddon">
 					</div>
 					<div class="input-group input-group-sm flex-fill">
 						<div class="input-group-text" id="btnGroupAddon">Start date</div>
@@ -102,8 +100,8 @@
 						} ?>
 						<thead>
 							<tr>
-								<th class="col-8 col-md-3" onclick="sortTable(0)">Title</th>
-								<th class="col-4 col-md-1 text-center" onclick="sortTable(1)">Start Date</th>
+								<th class="col-8 col-md-3">Title</th>
+								<th class="col-4 col-md-1 text-center">Start Date</th>
 								<th class="col-md-3 col-xxl-8 d-none d-md-table-cell">Description</th>
 							</tr>
 						</thead>
