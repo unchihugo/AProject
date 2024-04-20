@@ -35,7 +35,7 @@ if (isset($_POST['submitted'])) {
         $title = trim(htmlspecialchars($_POST['title']));
         $start_date = !empty($_POST['start_date']) ? preg_replace("([^0-9/])", "", $_POST['start_date']) : null;
         $end_date = !empty($_POST['end_date']) ? preg_replace("([^0-9/])", "", $_POST['end_date']) : null;
-        $phase = !empty($_POST['phase']) ? trim(htmlspecialchars($_POST['phase'])) : null;
+        $phase = isset($_POST['phase']) ? (trim(htmlspecialchars($_POST['phase'])) === 'none' ? '' : trim(htmlspecialchars($_POST['phase']))) : '';
         $description = isset($_POST['description']) ? trim(htmlspecialchars($_POST['description'])) : false;
 
         if ($start_date && $end_date && strtotime($start_date) > strtotime($end_date)) {
